@@ -47,7 +47,7 @@ Things you may want to cover:
 |user_id|integer|null: false, index: true|
 |group_id|integer|null: false, index: true|
 
-###Association
+### Association
 - belongs_to :user
 - belongs_to :group
 
@@ -57,7 +57,7 @@ Things you may want to cover:
 |user_id|integer|null: false, index: true|
 |group_id|integer|null: false, index: true|
 
-###Association
+### Association
 - belongs_to :member
 - belongs_to :group
 
