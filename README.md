@@ -36,7 +36,7 @@ Things you may want to cover:
 - has_many :messages
 - has_many :groups, through: :group_users
 
-## groupテーブル
+## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -61,8 +61,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false, foreign_key: true|
-|image|string|null: false, foreign_key:true|
+|body|text|
+|image|string|
 |group|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
 
