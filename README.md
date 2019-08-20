@@ -51,17 +51,6 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :group
 
-## groups_membersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, index: true|
-|group_id|integer|null: false, index: true|
-
-### Association
-- belongs_to :member
-- belongs_to :group
-
-
 ## messagesテーブル
 
 |Column|Type|Options|
@@ -70,6 +59,9 @@ Things you may want to cover:
 |image|string|null: false, foreign_key:true|
 |user|references|null: false, foreign_key: true|
 |group|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
 
 ## membersテーブル
 
