@@ -41,7 +41,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index: true|
-|user|references|null: false, foreign_key: true|
 
 ### Association
 - has_many :group_users
