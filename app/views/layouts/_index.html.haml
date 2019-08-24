@@ -1,0 +1,38 @@
+.wrapper
+  .chat-bar
+    .chat-bar__header
+      .chat-bar__header__text
+        %p.chat-bar__header__user-name reo
+        %ul.chat-bar__header__menu
+          %li.chat-bar__header__menu__new-group<
+            =link_to "#" do
+              = fa_icon 'edit'
+          %li.chat-bar__header__menu__edit-user<
+            =link_to "#" do
+              = fa_icon 'cog'
+    .groups
+      =link_to "#" do
+        .group
+          %p.group__group-name TECH::CAMP
+          %p.group__message Pictweet
+  .chat-contents
+    .contents-header
+      .contents-header__left-text
+        %h2.contents-header__left-text__current-group TECH::CAMP
+        %ul.contents-header__left-text__member-list
+          Member：
+          %li.contents-header__left-text__member-list__member<
+            reo
+      =link_to "#" do
+        .contents-header__edit-btn Edit
+    .messages
+      .message
+        .message__up-info
+          %p.message__up-info__talker kishida
+          %p.message__up-info__date 2019/08/21(Wed) 10:00:00
+        %p.message-text おはよう
+    .form
+      .form__message
+        %input{placeholder: "type a message"}
+        =fa_icon 'image'
+      %input{:type => "submit", :class => "submit-btn", :value => "Send"}

@@ -1,0 +1,159 @@
+
+
+.chat-bar{
+    width: 300px;
+    height:780px;
+    color: white;
+    float: left;
+    &__header{
+      background-color: #253141;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+    &__header__text{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-weight: bold;
+    }
+    &__header__menu{
+      display:flex;
+    }
+    &__header__menu__new-group,
+    &__header__menu__edit-user{
+      margin-left: 0.3rem;
+    }
+    a{
+      color:white;
+    }
+}
+
+.groups{
+  height:670px;
+  background-color: #2f3e51;
+  padding: 20px 20px 0;
+  overflow: scroll;
+  .group{
+    margin-bottom:40px;
+    &__group-name{
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+    &__message{
+      font-size: 11px;
+  }
+  }
+}
+
+.chat-contents{
+  width: calc(100vw - 300px);
+  float: left;
+  .contents-header{
+    height: 100px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px #eee;
+    overflow: scroll;
+    border:none;
+    &__edit-btn{
+      height: 38px;
+      line-height: 40px;
+      padding: 0 20px;
+      margin-top: 30px;
+      border: solid 1px #38aef0;
+      position: absolute;
+      right: 40px;
+    }
+    a{
+      color: #38aef0;
+    }
+
+    &__left-text{
+      margin-top:35px;
+
+    &__current-group{
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    &__member-list{
+      display: flex;
+      font-size: 12px;
+      color: #999999;
+    }
+    }
+  }
+}
+
+.messages{
+  height: 508px;
+  padding: 46px 40px;
+  background-color: #fafafa;
+  overflow: scroll;
+  .message{
+    padding-bottom: 40px;
+    &__up-info{
+      display: flex;
+      margin-bottom: 10px;
+    &__talker{
+      color: #434a54;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &__date{
+      color: #999999;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+    }
+    .message-text{
+      color: #434a54;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  }
+}
+.form{
+  display:flex;
+  height:50px;
+  padding: 20px 40px;
+  background-color: #ddd;
+  .submit-btn{
+    width: 98px;
+    height: 48px;
+    padding: 0 30px;
+    margin-left: 15px;
+    background-color: #38aef0;
+    color: white;
+    cursor: pointer;
+    border:none;
+  }
+  &__message{
+    height: 50px;
+    input{
+      width:895px;
+      height: 50px;
+      border:none;
+      padding: 0 40px 0 10px;
+      color: #434a54;
+    }
+    .fa-image{
+      font-size: 1.3rem;
+      position: absolute;
+      bottom: 32px;
+      right: 165px;
+      cursor: pointer;
+    }
+  &__text{
+    width: 100%;
+    height:50px;
+    padding: 0 40px 0 10px;
+    color: #434a54;
+    border-style: none;
+  }
+  }
+}
