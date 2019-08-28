@@ -9,13 +9,12 @@
     =link_to "#" do
       .contents-header__edit-btn Edit
   .messages
-    .message
-      .message__up-info
-        %p.message__up-info__talker kishida
-        %p.message__up-info__date 2019/08/21(Wed) 10:00:00
-      %p.message-text おはよう
+    = render @messages
   .form
-    .form__message
-      %input{placeholder: "type a message"}
-      =fa_icon 'image'
-    %input{ type: "submit", class: "submit-btn", value: "Send"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
