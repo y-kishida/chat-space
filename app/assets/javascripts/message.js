@@ -34,8 +34,8 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html);
       $('#new_message')[0].reset();
-      $('.message').animate({
-        scrollTop: $('.message')[0].scrollHeight
+      $('.messages').animate({
+        scrollTop: $('.messages')[0].scrollHeight
       }, 'fast');
     })
     .fail(function(){
