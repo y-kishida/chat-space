@@ -32,6 +32,11 @@ ul {
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
+
+  &__search {
+    height: 50px;
+  }
+
   &__errors {
     margin: 30px 0;
     padding: 20px 40px;
@@ -94,6 +99,7 @@ ul {
     float: left;
   }
   &__btn {
+    float:right;
     display: inline-block;
     cursor: pointer;
     &--add {

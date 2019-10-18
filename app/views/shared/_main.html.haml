@@ -1,12 +1,14 @@
 .chat-contents
   .contents-header
     .contents-header__left-text
-      %h2.contents-header__left-text__current-group group
+      %h2.contents-header__left-text__current-group 
+        = @group.name
       %ul.contents-header__left-text__member-list
         Member：
         %li.contents-header__left-text__member-list__member<
-          reo
-    =link_to "#" do
+        - @group.users.each do |user|
+          = user.name
+    = link_to edit_group_path(current_user) do
       .contents-header__edit-btn Edit
   .messages
     = render @messages
