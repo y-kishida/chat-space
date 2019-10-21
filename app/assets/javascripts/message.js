@@ -44,32 +44,30 @@ $(function(){
       $('.form__submit').prop('disabled', false);
     })
   });
-})
+    //自動更新機能
+    var reloadMessages = function() {
+      if (location.href.match(/\/groups\/\d+\/messages/)){
+      var last_message_id = $('.chat-contents__messages__message:last').data('message-id');
 
-//     //自動更新機能
-//     var reloadMessages = function() {
-//       if (location.href.match(/\/groups\/\d+\/messages/)){
-//       var last_message_id = $('.chat-contents__messages__message:last').data('message-id');
+    $.ajax({
+      url: 'api/messages',
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
 
-//     $.ajax({
-//       url: 'api/messages',
-//       type: 'get',
-//       dataType: 'json',
-//       data: {id: last_message_id}
-//     })
-
-//     .done(function(messages){
-//       var insertHTML='';
-//         messages.forEach(function(message){
-//           insertHTML = buildHTML(message);
-//           $('.chat-contents__messages').append(insertHTML);
-//           $('.message').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-//         });
-//     })
-//     .fail(function(){
-//       alert("自動更新に失敗しました")
-//     });
-//   };
-// };
-// setInterval(reloadMessages, 5000);
-// });
+    .done(function(messages){
+      var insertHTML='';
+        messages.forEach(function(message){
+          insertHTML = buildHTML(message);
+          $('.chat-contents__messages').append(insertHTML);
+          $('.message').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        });
+    })
+    .fail(function(){
+      alert("自動更新に失敗しました")
+    });
+  };
+};
+setInterval(reloadMessages, 5000);
+});
