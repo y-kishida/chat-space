@@ -8,7 +8,7 @@ $(function(){
                       ${message.user_name}
                     </p>
                     <p class="message__up-info__date">
-                      ${message.date}
+                      ${message.created_at}
                     </p>
                   </div>
                     <p class="message-text">
@@ -38,7 +38,7 @@ $(function(){
         scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     })
     .fail(function(){
-      alert('error');
+      alert('メッセージを入力してください');
     })
     .always(function(){
       $('.form__submit').prop('disabled', false);
