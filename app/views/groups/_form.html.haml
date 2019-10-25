@@ -23,7 +23,7 @@
     .chat-group-form__field--right
       #chat-group-users
         - group.users.each do |group_user|
-          #chat_group_user.chat-group-user.clearfix.js-chat-member
+          #chat_group_user.chat-group-user.clearfix.js-chat-member{ id: "chat-group-user-#{current_user.id}"}
             %input{ id: "user-search-field", name: "group[user_ids][]", type: "hidden", value: group_user[:id]}
             %p.chat-group-user__name
             = group_user[:name]

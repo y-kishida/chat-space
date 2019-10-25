@@ -1,7 +1,6 @@
 $(function(){
   function buildHTML(message){
-    var content = message.content ? `${message.content}` : "";
-    var img = message.image ? `<img src= "${message.image}">` : "";
+    var image = (message.image) ? `<img class= "lower-message__image" src=${message.image} >` : "";
     var html = `<div class="message"data-message-id= "${message.id}">
                   <div class="message__up-info">
                     <p class="message__up-info__talker">
@@ -12,9 +11,9 @@ $(function(){
                     </p>
                   </div>
                     <p class="message-text">
-                      ${content}
+                      ${message.content}
                     </p>
-                      ${img}
+                      ${image}
                 </div>`
     return html;
   }
@@ -47,21 +46,22 @@ $(function(){
     //自動更新機能
     var reloadMessages = function() {
       if (location.href.match(/\/groups\/\d+\/messages/)){
-      var last_message_id = $('.chat-contents__messages__message:last').data('message-id');
+      var last_message_id = $('.message:last').data('message-id');
 
     $.ajax({
       url: 'api/messages',
       type: 'get',
       dataType: 'json',
-      data: {id: last_message_id}
+      data: {id: last_message_id},
     })
 
     .done(function(messages){
       var insertHTML='';
         messages.forEach(function(message){
           insertHTML = buildHTML(message);
-          $('.chat-contents__messages').append(insertHTML);
-          $('.message').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+          $('.messages').append(insertHTML);
+          $('.messages').animate({
+            scrollTop: $('.messages')[0].scrollHeight}, 'fast');
         });
     })
     .fail(function(){
